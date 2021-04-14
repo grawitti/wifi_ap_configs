@@ -1,0 +1,13 @@
+[Unit]
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+StandardOutput=journal
+ExecStart=/usr/bin/ap_start
+ExecStop=/usr/bin/ap_stop
+
+[Install]
+WantedBy=network-online.target
